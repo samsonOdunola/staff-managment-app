@@ -1,0 +1,37 @@
+@media screen and (max-width: 800px) {
+  .mobileonly {
+    display: block;
+  }
+  .menuicons,
+  .navsec2 {
+    display: none;
+  }
+  main {
+    display: block;
+  }
+  .navbar {
+    background-color: rgb(255, 255, 255);
+    height: 10vh;
+    padding: 1vw 3vw;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid grey;
+  }
+  .navbar .mobilemenuicon {
+    font-size: 4vw;
+  }
+  .navbar .logo {
+    width: 14vw;
+    margin-bottom: 0vw;
+  }
+  .mobilemenu {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    background-color: green;
+    width: 50vw;
+    height: 100vh;
+  }
+}
