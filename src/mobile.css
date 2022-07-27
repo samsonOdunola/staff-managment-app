@@ -34,4 +34,30 @@
     width: 50vw;
     height: 100vh;
   }
+  .landingpage {
+    display: block;
+  }
+  .leftside {
+    display: none;
+  }
+  .rightside {
+    padding-top: 8vw;
+  }
+  .form {
+    display: block;
+    margin: 0 auto;
+  }
+  .form p {
+    font-size: 2vw;
+  }
+
+  .form h1 {
+    font-size: 5vw;
+
+    margin-bottom: 3vw;
+  }
+  .form input {
+    font-size: 3vw;
+    padding: 0.6vw 2vw;
+  }
 }

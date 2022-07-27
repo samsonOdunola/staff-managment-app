@@ -2,6 +2,27 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "poppins";
+}
+/* scroll bar stylings */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 main {
   display: flex;
@@ -9,11 +30,62 @@ main {
 .mobileonly {
   display: none;
 }
+.landingpage {
+  display: flex;
+  height: 100vh;
+}
+.form {
+  display: block;
+  margin: 10vw auto;
+  text-align: center;
+  width: 80%;
+  padding: 1vw 1vw;
+}
+.form > p {
+  color: rgb(81, 111, 222);
+  cursor: pointer;
+}
+form > p.error {
+  color: red;
+  text-align: left;
+}
+.form > h1 {
+  font-size: 1.5vw;
+  font-weight: 500;
+  margin-bottom: 2vw;
+}
+.form input {
+  width: 100%;
+  font-size: 1vw;
+  padding: 0.4vw 1vw;
+  outline: none;
+  margin-bottom: 1vw;
+  border-radius: 30px;
+  border: 1px solid grey;
+}
+form select {
+  width: 100%;
+  font-size: 1vw;
+  padding: 0.4vw 1vw;
+  outline: none;
+  margin-bottom: 1vw;
+  border-radius: 30px;
+  border: 1px solid grey;
+  color: grey;
+}
+.leftside {
+  flex-basis: 50%;
+  background-color: aqua;
+  border-radius: 0 15vw 0 0;
+}
+.rightside {
+  flex-basis: 50%;
+}
 
 .navbar {
-  background-color: rgb(20, 20, 20);
+  background-color: #072448;
   height: 100vh;
-  padding: 1vw 2vw;
+  padding: 1vw 1vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,7 +102,7 @@ main {
   font-size: 1.5vw;
 }
 .navlink:hover {
-  color: grey;
+  color: #ffcb00;
 }
 .menuicons > ul {
   list-style-type: none;
@@ -58,31 +130,288 @@ main {
   cursor: pointer;
 }
 .navsec2 button:hover {
-  color: rgb(211, 80, 80);
+  color: #ff6150;
 }
 section {
-  background-color: black;
   width: 100vw;
   height: 100vh;
-  padding: 2vw 10vw 5vw 10vw;
+  padding: 0.5vw 1vw;
 }
 .dashboardcontainer {
+  display: flex;
+  justify-content: space-between;
+  /* justify-content: center; */
+  width: 100%;
+  height: 100%;
+}
+.stafflist {
+  background-color: transparent;
+  width: 30%;
+  height: 100%;
+  border-radius: 20px;
+  overflow-y: scroll;
+}
+.cards {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.stafflist .staff {
+  background-color: white;
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-bottom: 1vw;
+  padding: 0.5vw 0.5vw;
+  box-shadow: 0px 3px 5px 0px rgb(184, 181, 181);
+}
+.staff > div {
+  display: flex;
+  align-items: center;
+}
+.staff .staffimage {
+  border-radius: 50%;
+  margin-right: 0.7vw;
+  width: 14%;
+}
+.profilebtn {
+  text-transform: uppercase;
+  background-color: #ffcb00;
+  border-style: none;
+  padding: 0.2vw 2vw;
+  border-radius: 50px;
+  margin-top: 1vw;
+  font-size: 0.6vw;
+}
+.staff p {
+  margin-bottom: 0;
+  font-weight: 300;
+  font-size: 0.8vw;
+  color: black;
+}
+.staff h2 {
+  font-size: 1vw;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.searchbar button {
+  background-color: transparent;
+  border-style: none;
+}
+.searchbar > div {
+  width: 100%;
+}
+.searchbar > div > input {
+  outline: none;
+  font-size: 0.8vw;
+  font-weight: 300;
+  width: 70%;
+  height: 2vw;
+  border-radius: 20px;
+  padding: 0vw 1vw;
+  border: 1px solid #072448;
+  margin-right: 1vw;
+}
+.searchicon {
+  background-color: #ffcb00;
+  color: white;
+  font-size: 0.8vw;
+  border-radius: 50%;
+  height: 2vw;
+  width: 2vw;
+  padding: 0.5vw;
+}
+.notificon {
+  color: red;
+  background-color: transparent;
+  color: #ff6150;
+  font-size: 2vw;
+  border-radius: 50%;
+  height: 2vw;
+  width: 2vw;
+  padding: 0.5vw;
+}
+.notificon:after {
+  content: "2";
+  background-color: #072448;
+}
+.board {
+  width: 100%;
+  flex-basis: 15%;
+  background-color: transparent;
+  border-radius: 10px;
+  background: url(./images/splash.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 1vw 2vw;
+}
+.board > h1 {
+  color: white;
+  font-size: 2vw;
+}
+.gridcontainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  flex-basis: 70%;
+  /* margin-top: 1vw; */
+}
+.gridcontainer .gridcards {
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: 0px 3px 5px 0px rgb(184, 181, 181);
+  padding: 0.5vw 1vw;
+}
+.gridcontainer .gridcards h3 {
+  font-size: 1vw;
+  color: grey;
+  text-transform: capitalize;
+}
+.gridcontainer .stats > div > p {
+  margin: 0;
+  font-size: 2vw;
+  font-weight: 700;
+  color: #072448;
+}
+.gridcontainer .stats .cardicon {
+  font-size: 2.5vw;
+  padding: 0.5vw;
+  color: #072448;
+  background-color: hsl(213, 82%, 80%);
+  border-radius: 50%;
+}
+.gridcontainer .stats > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cards .addstaffbtn {
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-style: none;
+  background-color: #ff6150;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.5vw 0;
+  font-size: 0.8vw;
 }
 
 .div1 {
-  grid-area: 2 / 2 / 3 / 4;
+  grid-area: 1 / 1 / 2 / 2;
 }
 .div2 {
   grid-area: 1 / 2 / 2 / 3;
+  background-color: green;
 }
 .div3 {
   grid-area: 1 / 3 / 2 / 4;
+  background-color: #072448;
 }
-.allstafflist {
-  grid-area: 1 / 1 / 3 / 2;
+.div4 {
+  grid-area: 2 / 1 / 4 / 2;
+  background-color: hsl(6, 100%, 66%);
+}
+.div5 {
+  grid-area: 2 / 3 / 6 / 4;
+  background-color: #ffcb00;
+}
+.div6 {
+  grid-area: 2 / 2 / 4 / 3;
+  background-color: aqua;
+}
+.div7 {
+  grid-area: 4 / 1 / 6 / 3;
+  background-color: black;
+}
+.upcomingbirthday {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.upcomingbirthday p {
+  margin-bottom: 0;
+  font-size: 0.6vw;
+}
+.upcomingbirthday > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5vw;
+}
+.upcomingbirthday > div > img {
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+}
+.upcomingbirthday > div > h4 {
+  font-size: 0.7vw;
+  margin-left: 0.2vw;
+  margin-bottom: 0;
+}
+.upcomingbirthday > div > h4 > span {
+  font-weight: 300;
+  color: #3e73b4;
+}
+.tasks > .taskhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5vw;
+  border-bottom: 1px solid black;
+}
+.tasks > .taskhead > span > button {
+  border-style: none;
+  background-color: #ff6150;
+  padding: 0.2vw 0.5vw;
+  border-radius: 5px;
+  font-size: 0.7vw;
+  color: white;
+}
+
+.tasks > .tasklist {
+  list-style-type: lower-roman;
+  overflow-y: scroll;
+}
+.tasks > .tasklist > li {
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  margin-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.521);
+}
+.tasks > .tasklist > li > p {
+  margin: 0;
+  font-size: 0.8vw;
+  margin-right: 2vw;
+}
+.tasklist > li > span > button {
+  border-radius: 50%;
+  font-size: 0.7vw;
+  padding: 0vw 0.2vw;
+  margin-right: 1vw;
+  border-style: none;
+}
+.newuserform {
+  width: 50%;
+  margin: 10vh auto;
+}
+.addtask {
+  width: 100%;
+  padding: 0.3vw 0.5vw;
+  border-radius: 5px;
+  border-style: 1px solid black;
+  outline: none;
 }
