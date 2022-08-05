@@ -43,29 +43,6 @@ const Dashboard = () => {
       <section>
         {loading ? (
           <div className="dashboardcontainer">
-            <div className="stafflist">
-              {users.map((user) => {
-                const { firstname, lastname, department, role, id } = user;
-                return (
-                  <div className="staff" key={id}>
-                    <div>
-                      <img
-                        className="staffimage"
-                        src={require("../images/image-1.png")}
-                        alt=""
-                      />
-                      <div className="details">
-                        <h2>{`${firstname} ${lastname}`}</h2>
-                        <p>{department}</p>
-                        <p>{role}</p>
-                      </div>
-                    </div>
-                    <button className="profilebtn">profile</button>
-                  </div>
-                );
-              })}
-            </div>
-
             <div className="cards">
               <div className="searchbar">
                 <div>

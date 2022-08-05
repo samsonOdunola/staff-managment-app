@@ -5,9 +5,8 @@ import { useSelector, useDispatch } from "react-redux/es/exports";
 import { hide } from "../redux/actions";
 import { taskCollectionRef } from "../functions";
 import { addDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+
 function AddtaskModal() {
-  let navigate = useNavigate();
   let dispatch = useDispatch();
   const globalState = useSelector((state) => state.states.addTaskDisplay);
   const [newTask, setAddNewTask] = useState("");
@@ -48,5 +47,25 @@ function AddtaskModal() {
     </>
   );
 }
+const ShowStaffModal = ({ profile }) => {
+  let dispatch = useDispatch();
+  const { firstname, lastname, othername } = profile;
+  const globalState = useSelector((state) => state.states.showProfileModal);
 
-export { AddtaskModal };
+  return (
+    <>
+      <Modal
+        show={globalState}
+        fullscreen={true}
+        onHide={() => dispatch(hide())}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>{`${firstname} ${othername} ${lastname}`}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{firstname}</Modal.Body>
+      </Modal>
+    </>
+  );
+};
+
+export { AddtaskModal, ShowStaffModal };

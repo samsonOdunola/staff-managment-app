@@ -3,10 +3,15 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { addDoc } from "firebase/firestore";
 import { usersCollectionRef } from "../functions";
-let userdetails = { status: "" };
 
 const Newstaffform = () => {
   let navigate = useNavigate();
+  let userdetails = {
+    status: "ON DUTY",
+    leavedays: 20,
+    password: "1234567890",
+    img: "",
+  };
 
   const createUser = async (values) => {
     await addDoc(usersCollectionRef, values);
@@ -23,7 +28,11 @@ const Newstaffform = () => {
       datejoined: "",
     },
     onSubmit: (values) => {
-      let finaldetails = { ...values, ...userdetails };
+      let finaldetails = {
+        ...values,
+        ...userdetails,
+        email: `${values.firstname}.${values.lastname}@ligagriculture.com`,
+      };
       createUser(finaldetails);
       alert("Success");
       navigate("/home/dashboard");

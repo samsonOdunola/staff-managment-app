@@ -6,7 +6,7 @@ import { AiOutlineSetting } from "react-icons/ai";
 const Navlinks = () => {
   const links = [
     { icon: <MdOutlineSpaceDashboard />, to: "dashboard" },
-    { icon: <HiOutlineUserGroup />, to: "" },
+    { icon: <HiOutlineUserGroup />, to: "Staff_List" },
     { icon: <BsListTask />, to: "" },
     { icon: <AiOutlineSetting />, to: "" },
   ];

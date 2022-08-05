@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import Homepage from "./Pages/Homepage";
-import Landingpage from "./Pages/Landingpage";
-import Newstaffform from "../src/Pages/Newstaffform";
+import Homepage from "./AdminPages/Homepage";
+import Landingpage from "./AdminPages/Landingpage";
+import Newstaffform from "../src/AdminPages/Newstaffform";
+import Userlandingpage from "./UserPages/Landingpage";
 function App() {
   return (
     <div className="App">
@@ -9,6 +10,7 @@ function App() {
         <Route path="/home/*" element={<Homepage />} />
         <Route path="/*" element={<Landingpage />} />
         <Route path="/adduser" element={<Newstaffform />} />
+        <Route path="/user/*" element={<Userlandingpage />} />
       </Routes>
     </div>
   );

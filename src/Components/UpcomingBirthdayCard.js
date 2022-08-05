@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 const UpcomingBirthdayCard = ({ birthdayarray }) => {
   const [birthDayList, setBirthDayList] = useState([]);
   const [thisMonth, setThisMonth] = useState([]);
-  const [nextMonth, setNextMonth] = useState([]);
+
   const getBirthDay = () => {
     let sortedArray = birthdayarray.sort(function (a, b) {
       let indexA =
@@ -38,7 +38,12 @@ const UpcomingBirthdayCard = ({ birthdayarray }) => {
                   <span>{role}</span>
                 </h4>
               </div>
-              <p>{birthdaydate}</p>
+              <p>
+                {"" +
+                  birthdaydate.split("-")[1] +
+                  "/" +
+                  birthdaydate.split("-")[2]}
+              </p>
             </div>
           );
         })}
